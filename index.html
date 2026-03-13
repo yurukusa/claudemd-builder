@@ -658,9 +658,8 @@ function buildMarkdown(d) {
   if (d.extras.includes('deployment')) {
     lines.push('## Deployment');
     lines.push('');
-    lines.push('<!-- Fill in your deployment process -->');
-    lines.push('- Staging: `TODO`');
-    lines.push('- Production: `TODO`');
+    lines.push('- Staging: `<your staging deploy command>`');
+    lines.push('- Production: `<your production deploy command>`');
     lines.push('- Always deploy to staging first and verify before production');
     lines.push('');
   }
@@ -669,7 +668,7 @@ function buildMarkdown(d) {
   if (d.extras.includes('troubleshooting')) {
     lines.push('## Troubleshooting');
     lines.push('');
-    lines.push('<!-- Add common issues as they arise -->');
+    lines.push('*Add common issues and solutions as they arise.*');
     if (d.pm[0] && d.pm[0] !== 'none') {
       lines.push(`- **Dependencies not resolving**: Delete \`node_modules\`/\`.venv\` and reinstall with \`${d.pm[0]} install\``);
     }
